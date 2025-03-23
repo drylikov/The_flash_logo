@@ -1,0 +1,202 @@
+// colors
+$bg-color: #cb282e;
+$white-color: #ffffff;
+$yellow-color: #ffd345;
+$gold-color: #ecad38;
+
+// mixins
+@mixin center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+  content: $content;
+  position: $position;
+}
+
+@mixin reset() {
+  * {
+    &,
+    &::before,
+    &::after {
+      box-sizing: border-box;
+      display: block;
+    }
+  }
+  position: relative;
+  z-index: 1;
+}
+
+
+body {
+  @include center;
+  background: $bg-color;
+  padding-top: 5%;
+  margin-left: -3%;
+}
+
+.logo {
+  @include reset;
+  .circle {
+    @include center;
+    width: 600px;
+    height: 600px;
+    background: $white-color;
+    border-radius: 50%;
+    border: 20px solid $yellow-color;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    &::before {
+      @include pseudo;
+      width: 560px;
+      height: 560px;
+      background: $white-color;
+      border-radius: 50%;
+      border: 17px solid $gold-color;
+    }
+    .flash {
+      .top {
+        position: absolute;
+        top: -135px;
+        left: 362px;
+        border-left: 100px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 425px solid $gold-color;
+        transform: rotate(38.5deg);
+        -webkit-transform: rotate(38.5deg);
+        z-index: 1;
+        &::before {
+          @include pseudo;
+          left: -30px;
+          z-index: 2;
+          top: 40px;
+          border-left: 25px solid transparent;
+          border-right: 3px solid transparent;
+          border-bottom: 250px solid $yellow-color;
+          transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+        }
+        &::after {
+          @include pseudo;
+          z-index: 2;
+          top: 288px;
+          left: -35px;
+          border-top: 80px solid $yellow-color;
+          border-right: 29px solid transparent;
+          transform: rotate(8deg);
+          -webkit-transform: rotate(8deg);
+        }
+      }
+      .top-2 {
+        width: 215px;
+        height: 96px;
+        position: absolute;
+        top: 168px;
+        left: 232px;
+        transform: skew(-53deg);
+        -webkit-transform: skew(-53deg);
+        background: $gold-color;
+      }
+      .top-2-shadow {
+        width: 80px;
+        height: 40px;
+        position: absolute;
+        top: 218px;
+        left: 250px;
+        z-index: 3;
+        transform: skew(-70deg);
+        -webkit-transform: skew(-70deg);
+        background: $yellow-color;
+      }
+      .center {
+        width: 120px;
+        height: 250px;
+        position: absolute;
+        top: 180px;
+        left: 250px;
+        transform: skew(-45deg);
+        -webkit-transform: skew(-45deg);
+        background: $gold-color;
+      }
+      .center-shadow {
+        width: 50px;
+        height: 120px;
+        position: absolute;
+        top: 220px;
+        left: 338px;
+        z-index: 2;
+        transform: skew(-45deg);
+        -webkit-transform: skew(-45deg);
+        background: $yellow-color;
+        &::before {
+          @include pseudo;
+          z-index: 2;
+          left: 0px;
+          top: 120px;
+          border-top: 40px solid $yellow-color;
+          border-right: 50px solid transparent;
+        }
+        &::after {
+          @include pseudo;
+          z-index: 2;
+          left: -1px;
+          top: -43px;
+          border-bottom: 45px solid $yellow-color;
+          border-left: 51px solid transparent;
+        }
+      }
+      .center-shadow-2 {
+        width: 80px;
+        height: 45px;
+        position: absolute;
+        top: 388px;
+        left: 175px;
+        z-index: 3;
+        transform: skew(-65deg);
+        -webkit-transform: skew(-65deg);
+        background: $yellow-color;
+      }
+      .center-2 {
+        width: 210px;
+        height: 100px;
+        position: absolute;
+        top: 340px;
+        left: 168px;
+        transform: skew(-48deg);
+        -webkit-transform: skew(-48deg);
+        background: $gold-color;
+      }
+      .bottom {
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 315px;
+        left: 155px;
+        border-left: 3px solid transparent;
+        border-right: 100px solid transparent;
+        border-top: 450px solid $gold-color;
+        transform: rotate(36deg);
+        -webkit-transform: rotate(36deg);
+      }
+      .bottom-shadow {
+        position: absolute;
+        left: 178px;
+        z-index: 2;
+        top: 340px;
+        border-left: 30px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 370px solid $yellow-color;
+        transform: rotate(48deg);
+        -webkit-transform: rotate(48deg);
+        &::before {
+          @include pseudo;
+          z-index: 2;
+          top: -468px;
+          left: -30px;
+          border-bottom: 100px solid $yellow-color;
+          border-left: 33px solid transparent;
+        }
+      }
+    }
+  }
+}
