@@ -1,4 +1,4 @@
-# The Flash Logo .
+# The flash logo .
 The Flash logo using HTML and CSS
 
 [Visit design source](https://dribbble.com/shots/25808960-The-flash-logo)
